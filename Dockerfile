@@ -13,5 +13,4 @@ RUN cd bin && ls -al
 RUN cd etc && ls -al
 EXPOSE 1883 8883 8080 44053 4369 8888 \
        9100 9101 9102 9103 9104 9105 9106 9107 9108 9109
-USER vernemq
 CMD ["bin/vernemq", "start"]

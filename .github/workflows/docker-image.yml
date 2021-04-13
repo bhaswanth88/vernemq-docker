@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build the VerneMQ Docker image
     - run: timestamp=$(date +%s) 
     - run: docker build . --file Dockerfile --tag bhaswanth88/vernemq-docker:$timestamp --tag bhaswanth88/vernemq-docker:latest
     - run: docker push bhaswanth88/vernemq-docker:$timestamp

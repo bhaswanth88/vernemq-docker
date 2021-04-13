@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the VerneMQ Docker image
-      run: timestamp=$(date +%s) &&  docker build . --file Dockerfile --tag bhaswanth88/vernemq-docker:$timestamp --tag bhaswanth88/vernemq-docker:latest && docker push bhaswanth88/vernemq-docker:$timestamp
+      run: timestamp=$(date +%s) &&  docker login --username=${{ secrets.DOCKER_HUB_USERNAME }} --password=${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} && docker build . --file Dockerfile --tag bhaswanth88/vernemq-docker:$timestamp --tag bhaswanth88/vernemq-docker:latest && docker push bhaswanth88/vernemq-docker:$timestamp
